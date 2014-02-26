@@ -8,13 +8,12 @@ CKEDITOR.plugins.add( 'blankify',
         exec : function( editor )
         {   
           var style = new CKEDITOR.style({
-            element : 'span', 
-            attributes : { 'class' : 'blankify' },
-            styles: {'color' : '#A8A8A8'}
+            Element : 'span', 
+            Attributes : { 'class' : 'blankify' },
+            Styles: {'color' : '#A8A8A8'}
           }));
           
-          style.type = CKEDITOR.STYLE_INLINE;
-          style.apply( editor.document );
+          editor.applyStyle(style);
 
           var selection = editor.getSelection().getSelectedText();
           var newElement = new CKEDITOR.dom.element( "span" );
