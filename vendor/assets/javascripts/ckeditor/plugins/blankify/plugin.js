@@ -9,7 +9,7 @@ CKEDITOR.plugins.add( 'blankify',
         {    
           var selection = editor.getSelection().getSelectedText();
           var newElement = new CKEDITOR.dom.element("blankify"); 
-          newElement.setText(selected_text);                         
+          newElement.setText(selection);                         
           editor.insertElement(newElement);   
         }
       });
