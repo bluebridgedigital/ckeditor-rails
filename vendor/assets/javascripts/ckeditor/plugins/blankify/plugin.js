@@ -9,7 +9,8 @@ CKEDITOR.plugins.add( 'blankify',
         {   
           editor.applyStyle(new CKEDITOR.style({
             Element : 'span', 
-            Attributes : { class : 'blankify' }
+            Attributes : { class : 'blankify' },
+            Styles: {color : '#A8A8A8'}
           }));
           //editor.applyStyle(new CKEDITOR.style({Element : 'p', Attributes : { class : 'Myclass' }, Styles : { color : '#ff0000'} )); 
           //var selection = editor.getSelection().getSelectedText();
