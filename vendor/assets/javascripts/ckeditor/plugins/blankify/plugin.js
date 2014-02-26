@@ -7,7 +7,7 @@ CKEDITOR.plugins.add( 'blankify',
       {
         exec : function( editor )
         {   
-          editor.applyStyle(new CKEDITOR.style({Element : 'p', Attributes : { class : 'Myclass' }, Styles : { color : '#ff0000','font-family' : 'Courier' } )); 
+          editor.applyStyle(new CKEDITOR.style({Element : 'p', Attributes : { class : 'Myclass' }, Styles : { color : '#ff0000'} )); 
           //var selection = editor.getSelection().getSelectedText();
           //var newElement = new CKEDITOR.dom.element("em"); 
           //newElement.setText(selection);                         
