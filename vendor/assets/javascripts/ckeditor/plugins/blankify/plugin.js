@@ -11,7 +11,7 @@ CKEDITOR.plugins.add( 'blankify',
             Element : 'span', 
             Attributes : { 'class' : 'blankify' },
             Styles: {'color' : '#A8A8A8'}
-          }));
+          });
           
           editor.applyStyle(style);
 
