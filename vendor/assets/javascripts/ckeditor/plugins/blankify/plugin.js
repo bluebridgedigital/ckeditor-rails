@@ -8,7 +8,7 @@ CKEDITOR.plugins.add( 'blankify',
         exec : function( editor )
         {    
           var selection = editor.getSelection().getSelectedText();
-          var newElement = new CKEDITOR.dom.element("blankify"); 
+          var newElement = new CKEDITOR.dom.element("span"); 
           newElement.setText(selection);                         
           editor.insertElement(newElement);   
         }
