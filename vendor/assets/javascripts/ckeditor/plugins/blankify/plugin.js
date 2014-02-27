@@ -18,7 +18,7 @@ CKEDITOR.plugins.add( 'blankify',
 
 
           var selection = editor.document.getSelection();
-          var ele = selection.getSelectedElement();
+          var ele = selection.getStartElement();
           alert(ele.getName());
           if(style.checkElementMatch(ele,false)){
             alert("check true");
