@@ -25,6 +25,7 @@ CKEDITOR.plugins.add( 'blankify',
             var range = selection.getRanges()[0];
             alert("range is" + range);
             style.removeFromRange(range);
+            style.remove(editor.document);
             return;
 
           }
