@@ -20,11 +20,11 @@ CKEDITOR.plugins.add( 'blankify',
           var selection = editor.document.getSelection();
           //var element = editor.document.getSelection().getSelectedElement();
           //style.applyToObject(element);
-          var element1 = new CKEDITOR.dom.element( 'element1', editor.document );
+          var element1 = new CKEDITOR.dom.element( 'blankify', editor.document );
           //if (selection.getStartElement().getName() == 'span')
           //{
-             element1.insertBefore( selection.getStartElement() );
-             element1.append(selection.getStartElement());
+             element1.setText( selection.getSelectedText() );
+             editor.insertElement(element1);
              style.applyToObject(element1);
           //} 
 
