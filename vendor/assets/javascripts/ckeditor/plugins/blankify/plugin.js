@@ -16,8 +16,8 @@ CKEDITOR.plugins.add( 'blankify',
           style.type = CKEDITOR.STYLE_INLINE;
           //style.apply( editor.document );
 
-          var range = new CKEDITOR.dom.range( editor.document);
-          range.selectNodeContents( editor.document.getSelection() );
+          var range = new CKEDITOR.dom.range( editor.document.getSelection());
+          //range.selectNodeContents( editor.document.getSelection() );
           style.applyToRange(range);
           // Delete the contents.
           //range.deleteContents();
