@@ -23,6 +23,7 @@ CKEDITOR.plugins.add( 'blankify',
           if(style.checkElementMatch(ele,false)){
             alert("check true");
             var range = selection.getRanges()[0];
+            alert("range is" + range);
             style.removeFromRange(range);
             return;
 
