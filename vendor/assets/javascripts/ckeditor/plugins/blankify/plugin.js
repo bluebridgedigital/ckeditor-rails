@@ -20,7 +20,7 @@ CKEDITOR.plugins.add( 'blankify',
           var selection = editor.document.getSelection();
           var ele = selection.getSelectedElement();
           if(style.checkElementMatch(ele,false)){
-
+            alert("check true");
             var range = selection.getRanges()[0];
             style.removeFromRange(range);
             return;
