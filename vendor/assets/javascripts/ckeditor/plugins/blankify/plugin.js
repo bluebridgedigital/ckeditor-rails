@@ -18,13 +18,14 @@ CKEDITOR.plugins.add( 'blankify',
 
 
           var selection = editor.document.getSelection();
-          var element = editor.document.getSelection().getSelectedElement();
-          style.applyToObject(element);
-          //var element1 = new CKEDITOR.dom.element( 'element1', editor.document );
+          //var element = editor.document.getSelection().getSelectedElement();
+          //style.applyToObject(element);
+          var element1 = new CKEDITOR.dom.element( 'element1', editor.document );
           //if (selection.getStartElement().getName() == 'span')
           //{
-          //   element1.insertBefore( selection.getStartElement() );
-          //   element1.append(selection.getStartElement());
+             element1.insertBefore( selection.getStartElement() );
+             element1.append(selection.getStartElement());
+             style.applyToObject(element1);
           //} 
 
           //editor.applyStyle(new CKEDITOR.style({Element : 'p', Attributes : { class : 'Myclass' }, Styles : { color : '#ff0000'} )); 
