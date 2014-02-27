@@ -14,15 +14,10 @@ CKEDITOR.plugins.add( 'blankify',
           });
           
           style.type = CKEDITOR.STYLE_INLINE;
-          //style.apply( editor.document );
+          style.apply( editor.document );
 
-          var range = new CKEDITOR.dom.range( editor.document.getSelection());
-          //range.selectNodeContents( editor.document.getSelection() );
-          style.applyToRange(range);
-          // Delete the contents.
-          //range.deleteContents();
 
-          //var selection = editor.document.getSelection();
+          var selection = editor.document.getSelection();
           //var element1 = new CKEDITOR.dom.element( 'element1', editor.document );
           //if (selection.getStartElement().getName() == 'span')
           //{
