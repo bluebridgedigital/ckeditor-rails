@@ -34,6 +34,9 @@ CKEDITOR.plugins.add( 'blankify',
           if(style.checkElementMatch(ele,false)){
             alert('with false');
             editor.removeStyle(style);
+            editor.attachStyleStateChange( style, function( state ) {
+              editor.getCommand( 'insertBlankify' ).setState( state );
+            } );
             return;
 
           } 
