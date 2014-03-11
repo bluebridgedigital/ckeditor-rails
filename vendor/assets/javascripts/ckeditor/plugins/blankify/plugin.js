@@ -5,7 +5,9 @@ CKEDITOR.plugins.add( 'blankify',
 
     var style = new CKEDITOR.style({
       element : 'span', 
-      attributes : { 'class' : 'blankify' },
+      attributes : { 'class' : 'blankify',
+                      'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
+                    },
       styles: {'background-color' : '#A8A8A8'}
     });
 
