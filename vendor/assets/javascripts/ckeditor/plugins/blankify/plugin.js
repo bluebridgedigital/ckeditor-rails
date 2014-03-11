@@ -14,8 +14,10 @@ CKEDITOR.plugins.add( 'blankify',
     editor.attachStyleStateChange( style, function( state ) {
       editor.getCommand( 'insertBlankify' ).setState( state );
     } );
-
+    alert('hi');
     var cf = [
+      'b',
+       'i',
       ['span' , function(el){
         alert('hi');
         el.styles['id'] = Math.round(new Date().getTime() + (Math.random() * 100));
