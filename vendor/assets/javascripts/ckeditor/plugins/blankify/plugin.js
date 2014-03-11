@@ -33,6 +33,7 @@ CKEDITOR.plugins.add( 'blankify',
           var ele = selection.getStartElement();
           if(style.checkElementMatch(ele,false)){
             alert('with false');
+            editor.removeStyle(style);
             return;
 
           } 
