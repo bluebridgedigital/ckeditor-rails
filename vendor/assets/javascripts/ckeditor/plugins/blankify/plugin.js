@@ -17,7 +17,9 @@ CKEDITOR.plugins.add( 'blankify',
 
     editor.addCommand( 'insertBlankify', new CKEDITOR.styleCommand(style,
       {
-        'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
+        attributes : { 'class' : 'blankify',
+                      'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
+                    }
       }) );
     // editor.addCommand( 'insertBlankify', {
     //     exec: function( editor ) {
