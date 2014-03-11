@@ -32,11 +32,12 @@ CKEDITOR.plugins.add( 'blankify',
           var selection = editor.document.getSelection();
           var ele = selection.getStartElement();
           if(style.checkElementMatch(ele,false)){
-        
+            alert('with false');
             return;
 
           } 
           if(style.checkElementMatch(ele,true)){
+            alert('with true');
             var range = selection.getRanges()[0];
             style.removeFromRange(range);
             style.remove(editor.document);
