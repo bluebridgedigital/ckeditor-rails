@@ -29,6 +29,8 @@ CKEDITOR.plugins.add( 'blankify',
           styles: {'background-color' : '#A8A8A8'}
         });
 
+        editor.applyStyle(style);
+
         editor.attachStyleStateChange( style, function( state ) {
           editor.getCommand( 'insertBlankify' ).setState( state );
         } );
