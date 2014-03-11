@@ -29,6 +29,19 @@ CKEDITOR.plugins.add( 'blankify',
           styles: {'background-color' : '#A8A8A8'}
         });
 
+          var selection = editor.document.getSelection();
+          var ele = selection.getStartElement();
+            if(style.checkElementMatch(ele,false)){
+          
+              return;
+  
+            }else if(style.checkElementMatch(ele,true){
+              var range = selection.getRanges()[0];
+              style.removeFromRange(range);
+              style.remove(editor.document);
+              return;
+            }
+
         editor.applyStyle(style);
 
         editor.attachStyleStateChange( style, function( state ) {
