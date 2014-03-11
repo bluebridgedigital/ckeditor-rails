@@ -17,6 +17,10 @@ CKEDITOR.plugins.add( 'blankify',
 
     editor.addCommand( 'insertBlankify', new CKEDITOR.styleCommand(style,
       {
+        exec : function( editor )
+          {  
+            alert('hello');
+          }
       }) );
     editor.ui.addButton( 'blankify',
     {
