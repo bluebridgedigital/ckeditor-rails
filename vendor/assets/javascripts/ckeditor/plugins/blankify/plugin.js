@@ -17,6 +17,7 @@ CKEDITOR.plugins.add( 'blankify',
 
     var cf = [
       ['span' , function(el){
+        alert('hi');
         el.styles['id'] = Math.round(new Date().getTime() + (Math.random() * 100));
         return el.styles; 
       }]
