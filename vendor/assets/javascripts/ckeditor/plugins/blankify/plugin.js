@@ -31,16 +31,17 @@ CKEDITOR.plugins.add( 'blankify',
 
           var selection = editor.document.getSelection();
           var ele = selection.getStartElement();
-            if(style.checkElementMatch(ele,false)){
-          
-              return;
-  
-            }else if(style.checkElementMatch(ele,true){
-              var range = selection.getRanges()[0];
-              style.removeFromRange(range);
-              style.remove(editor.document);
-              return;
-            }
+          if(style.checkElementMatch(ele,false)){
+        
+            return;
+
+          } 
+          if(style.checkElementMatch(ele,true)){
+            var range = selection.getRanges()[0];
+            style.removeFromRange(range);
+            style.remove(editor.document);
+            return;
+          }
 
         editor.applyStyle(style);
 
