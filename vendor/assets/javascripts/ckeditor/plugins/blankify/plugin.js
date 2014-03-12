@@ -21,37 +21,32 @@ CKEDITOR.plugins.add( 'blankify',
     }
     initBlankify(editor);
 
-    editor.on('afterCommandExec', handleAfterCommandExec);
-    function handleAfterCommandExec(event)
-    {
-      var commandName = event.data.name;
+    // editor.on('afterCommandExec', handleAfterCommandExec);
+    // function handleAfterCommandExec(event)
+    // {
+    //   var commandName = event.data.name;
 
-      // For 'bold' commmand
-      if (commandName == 'insertBlankify'){
-       //event.editor.getCommand('insertBlankify').disable();
-       //initBlankify(event.editor);
-       event.data.command.style = new CKEDITOR.style({
-        element : 'span', 
-        attributes : { 'class' : 'blankify',
-                        'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
-                      },
-        styles: {'background-color' : '#A8A8A8'}
+    //   // For 'bold' commmand
+    //   if (commandName == 'insertBlankify'){
+    //    //event.editor.getCommand('insertBlankify').disable();
+    //    //initBlankify(event.editor);
+    //    event.data.command.style = new CKEDITOR.style({
+    //     element : 'span', 
+    //     attributes : { 'class' : 'blankify',
+    //                     'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
+    //                   },
+    //     styles: {'background-color' : '#A8A8A8'}
 
-      });
+    //   });
 
-       event.editor.attachStyleStateChange(event.data.command.style, function(state){
-          event.editor.getCommand('insertBlankify').setState(state);
-        });
+    //    event.editor.attachStyleStateChange(event.data.command.style, function(state){
+    //       event.editor.getCommand('insertBlankify').setState(state);
+    //     });
 
-      }
-    }
+    //   }
+    // }
 
-    // editor.on( 'insertBlankify', function() {
-    //   alert( 'hi' ); 
-    //   for(var instanceName in CKEDITOR.instances)
-    //     CKEDITOR.remove(CKEDITOR.instances[instanceName]);        
-    //   CKEDITOR.replaceAll();       // true
-    // } );
+    // ----------------------------------
     // editor.addCommand( 'insertBlankify', {
     //     exec: function( editor ) {
     //       var style = new CKEDITOR.style({
