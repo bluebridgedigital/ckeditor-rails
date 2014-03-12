@@ -24,8 +24,11 @@ CKEDITOR.plugins.add( 'blankify',
     {
       var commandName = event.data.name;
       // For 'bold' commmand
-      if (commandName == 'insertBlankify')
-        alert("Bold button pressed!");
+      if (commandName == 'insertBlankify'){
+        for(var instanceName in CKEDITOR.instances)
+          CKEDITOR.remove(CKEDITOR.instances[instanceName]);        
+        CKEDITOR.replaceAll();  
+      }
     }
 
     // editor.on( 'insertBlankify', function() {
