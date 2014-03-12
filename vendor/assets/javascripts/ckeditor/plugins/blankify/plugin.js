@@ -25,11 +25,19 @@ CKEDITOR.plugins.add( 'blankify',
     function handleAfterCommandExec(event)
     {
       var commandName = event.data.name;
+
       // For 'bold' commmand
       if (commandName == 'insertBlankify'){
-        alert('after exec');
-       event.editor.getCommand('insertBlankify').disable();
-       initBlankify(event.editor);
+        alert('before exec');
+       //event.editor.getCommand('insertBlankify').disable();
+       //initBlankify(event.editor);
+       event.data.command.style = new CKEDITOR.style({
+        element : 'span', 
+        attributes : { 'class' : 'blankify',
+                        'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
+                      },
+        styles: {'background-color' : '#A8A8A8'}
+      });
 
       }
     }
