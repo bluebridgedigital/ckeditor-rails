@@ -19,12 +19,21 @@ CKEDITOR.plugins.add( 'blankify',
       {
       }) );
 
-    editor.on( 'insertBlankify', function() {
-      alert( 'hi' ); 
-      for(var instanceName in CKEDITOR.instances)
-        CKEDITOR.remove(CKEDITOR.instances[instanceName]);        
-      CKEDITOR.replaceAll();       // true
-    } );
+    editor.on('afterCommandExec', handleAfterCommandExec);
+    function handleAfterCommandExec(event)
+    {
+      var commandName = event.data.name;
+      // For 'bold' commmand
+      if (commandName == 'insertBlankify')
+        alert("Bold button pressed!");
+    }
+
+    // editor.on( 'insertBlankify', function() {
+    //   alert( 'hi' ); 
+    //   for(var instanceName in CKEDITOR.instances)
+    //     CKEDITOR.remove(CKEDITOR.instances[instanceName]);        
+    //   CKEDITOR.replaceAll();       // true
+    // } );
     // editor.addCommand( 'insertBlankify', {
     //     exec: function( editor ) {
     //       var style = new CKEDITOR.style({
