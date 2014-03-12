@@ -19,15 +19,13 @@ CKEDITOR.plugins.add( 'blankify',
       {
       }) );
 
-    editor.on('afterCommandExec', handleAfterCommandExec);
+    editor.on('beforeCommandExec', handleAfterCommandExec);
     function handleAfterCommandExec(event)
     {
       var commandName = event.data.name;
       // For 'bold' commmand
       if (commandName == 'insertBlankify'){
-        for(var instanceName in CKEDITOR.instances)
-          CKEDITOR.remove(CKEDITOR.instances[instanceName]);        
-        CKEDITOR.replaceAll();  
+       
       }
     }
 
