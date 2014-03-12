@@ -17,10 +17,14 @@ CKEDITOR.plugins.add( 'blankify',
 
     editor.addCommand( 'insertBlankify', new CKEDITOR.styleCommand(style,
       {
-        attributes : { 'class' : 'blankify',
-                      'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
-                    }
       }) );
+
+    editor.on( 'insertBlankify', function() {
+      alert( 'hi' ); 
+      for(var instanceName in CKEDITOR.instances)
+        CKEDITOR.remove(CKEDITOR.instances[instanceName]);        
+      CKEDITOR.replaceAll();       // true
+    } );
     // editor.addCommand( 'insertBlankify', {
     //     exec: function( editor ) {
     //       var style = new CKEDITOR.style({
