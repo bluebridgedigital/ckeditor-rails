@@ -2,22 +2,24 @@ CKEDITOR.plugins.add( 'blankify',
 {
   init: function( editor )
   {
+    function initBlankify(editor){
+      var style = new CKEDITOR.style({
+        element : 'span', 
+        attributes : { 'class' : 'blankify',
+                        'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
+                      },
+        styles: {'background-color' : '#A8A8A8'}
+      });
 
-    var style = new CKEDITOR.style({
-      element : 'span', 
-      attributes : { 'class' : 'blankify',
-                      'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
-                    },
-      styles: {'background-color' : '#A8A8A8'}
-    });
+      editor.attachStyleStateChange( style, function( state ) {
+        editor.getCommand( 'insertBlankify' ).setState( state );
+      } );
 
-    editor.attachStyleStateChange( style, function( state ) {
-      editor.getCommand( 'insertBlankify' ).setState( state );
-    } );
-
-    editor.addCommand( 'insertBlankify', new CKEDITOR.styleCommand(style,
-      {
-      }) );
+      editor.addCommand( 'insertBlankify', new CKEDITOR.styleCommand(style,
+        {
+        }) );
+    }
+    initBlankify(editor);
 
     editor.on('afterCommandExec', handleAfterCommandExec);
     function handleAfterCommandExec(event)
@@ -25,7 +27,10 @@ CKEDITOR.plugins.add( 'blankify',
       var commandName = event.data.name;
       // For 'bold' commmand
       if (commandName == 'insertBlankify'){
-       event.editor.getCommand('insertBlankify').refresh();
+        alert('after exec');
+       event.editor.getCommand('insertBlankify').disable();
+       initBlankify(event.editor);
+
       }
     }
 
