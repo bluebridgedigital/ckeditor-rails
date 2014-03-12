@@ -21,14 +21,13 @@ CKEDITOR.plugins.add( 'blankify',
     }
     initBlankify(editor);
 
-    editor.on('beforeCommandExec', handleAfterCommandExec);
+    editor.on('afterCommandExec', handleAfterCommandExec);
     function handleAfterCommandExec(event)
     {
       var commandName = event.data.name;
 
       // For 'bold' commmand
       if (commandName == 'insertBlankify'){
-        alert('before exec');
        //event.editor.getCommand('insertBlankify').disable();
        //initBlankify(event.editor);
        event.data.command.style = new CKEDITOR.style({
