@@ -21,7 +21,7 @@ CKEDITOR.plugins.add( 'blankify',
     }
     initBlankify(editor);
 
-    editor.on('afterCommandExec', handleAfterCommandExec);
+    editor.on('beforeCommandExec', handleAfterCommandExec);
     function handleAfterCommandExec(event)
     {
       var commandName = event.data.name;
