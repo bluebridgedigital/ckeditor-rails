@@ -36,6 +36,9 @@ CKEDITOR.plugins.add( 'blankify',
                         'id': Math.round(new Date().getTime() + (Math.random() * 100)) 
                       },
         styles: {'background-color' : '#A8A8A8'}
+        event.editor.attachStyleStateChange(event.data.command.style, function(state){
+          event.editor.getCommand('insertBlankify').setState(state);
+        });
       });
 
       }
