@@ -75,8 +75,8 @@ CKEDITOR.plugins.add( 'blankify',
           }
 
           var body = editor.document.getBody().getHtml();
-          body.replace('</span><span class="blankify".*?>', '');
-          editor.document.getBody().setHtml(body);
+          var newBody = body.replace('</span><span class="blankify".*?>', '');
+          editor.document.getBody().setHtml(newBody);
           var z=3;
 
 
