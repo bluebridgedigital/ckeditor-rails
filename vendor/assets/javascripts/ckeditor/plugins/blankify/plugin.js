@@ -62,6 +62,12 @@ CKEDITOR.plugins.add( 'blankify',
           if(style.checkElementMatch(ele,false)){
             //alert('with false');
             editor.removeStyle(style);
+            var eles = editor.document.getElementsByTag('span');
+            for(var i=0; i<eles.length; i++){
+              var node = eles.getItem(i);
+              if(!node.hasAttribute('id'))
+                node.setAttribute('id', Math.round(new Date().getTime() + (Math.random() * 100)))
+            }
            
             return;
 
@@ -70,12 +76,6 @@ CKEDITOR.plugins.add( 'blankify',
             editor.applyStyle(style);
           }
 
-        var eles = editor.document.getElementsByTag('span');
-        for(var i=0; i<eles.length; i++){
-          var node = eles.getItem(i);
-          if(!node.hasAttribute('id'))
-            node.setAttribute('id', Math.round(new Date().getTime() + (Math.random() * 100)))
-        }
 
         }
     } );
