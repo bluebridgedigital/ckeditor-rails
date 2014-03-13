@@ -60,19 +60,22 @@ CKEDITOR.plugins.add( 'blankify',
           var selection = editor.document.getSelection();
           var ele = selection.getStartElement();
           if(style.checkElementMatch(ele,false)){
-            alert('with false');
+            //alert('with false');
             editor.removeStyle(style);
-            editor.attachStyleStateChange( style, function( state ) {
-              editor.getCommand( 'insertBlankify' ).setState( state );
-            } );
+           
             return;
 
-          } 
-
-        editor.applyStyle(style);
+          }
+          else{ 
+            editor.applyStyle(style);
+          }
 
         var eles = editor.document.getElementsByTag('span');
-        var res = 2;
+        for(var i=0; i<eles.length; i++){
+          var node = eles.getItem(i);
+          if(!node.hasAttribute('id'))
+            node.setAttribute('id', Math.round(new Date().getTime() + (Math.random() * 100)))
+        }
 
         }
     } );
