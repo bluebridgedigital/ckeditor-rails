@@ -68,13 +68,14 @@ CKEDITOR.plugins.add( 'blankify',
               if(!node.hasAttribute('id'))
                 node.setAttribute('id', Math.round(new Date().getTime() + (Math.random() * 100)))
             }
-           
-            return;
 
           }
           else{ 
             editor.applyStyle(style);
           }
+
+          var body = editor.document.getBody();
+          var z=3;
 
 
         }
